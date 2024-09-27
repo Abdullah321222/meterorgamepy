@@ -43,24 +43,22 @@ def restart_game():
     shoot_time = None
     pygame.time.set_timer(meteor_timer, 500)  # Reset meteor timer
 
-# Initialize Pygame
 pygame.init()
 
-# Game constants
 WINDOW_WIDTH, WINDOW_HEIGHT = pygame.display.Info().current_w, pygame.display.Info().current_h
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.FULLSCREEN)
 pygame.display.set_caption("Asteroid")
 
-# Load assets (make sure paths are correct)
+
 try:
-    ship_surf = pygame.image.load('./graphics/ship.png').convert_alpha()
-    laser_surf = pygame.image.load('./graphics/laser.png').convert_alpha()
-    meteor_surf = pygame.image.load('./graphics/meteor.png')
-    bg_surf = pygame.image.load('./graphics/background.png').convert()
-    font = pygame.font.Font('./graphics/subatomic.ttf', 50)
-    laser_sound = pygame.mixer.Sound('./graphics/laser.ogg')
-    explosion_sound = pygame.mixer.Sound('./graphics/explosion.wav')
-    background_music = pygame.mixer.Sound('./graphics/music.wav')
+    ship_surf = pygame.image.load('./ship.png').convert_alpha()
+    laser_surf = pygame.image.load('./laser.png').convert_alpha()
+    meteor_surf = pygame.image.load('./meteor.png')
+    bg_surf = pygame.image.load('./background.png').convert()
+    font = pygame.font.Font('./subatomic.ttf', 50)
+    laser_sound = pygame.mixer.Sound('./laser.ogg')
+    explosion_sound = pygame.mixer.Sound('./music1.wav')
+    background_music = pygame.mixer.Sound('./music2.wav')
     background_music.play(loops=-1)
 except pygame.error as e:
     print(f"Error loading assets: {e}")
